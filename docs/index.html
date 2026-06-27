@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Interiors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f0eee6;
+    --ink: #1a1a1a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    justify-content: center;
+    padding: 56px 24px 64px;
+  }
+  .page {
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 56px;
+    display: block;
+  }
+  .script {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 28px;
+  }
+
+  /*delete .placeholder after she gives link*/
+  .placeholder {
+    border: 1px dashed var(--ink);
+    border-radius: 2px;
+    padding: 16px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .link-box {
+    display: block;
+    border: 1px solid var(--ink);
+    padding: 16px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--ink);
+    transition: background 0.15s ease;
+  }
+  .link-box:hover { background: rgba(0,0,0,0.04); }
+
+  .contacts { margin-top: 64px; }
+  .label {
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+  .rule {
+    width: 140px;
+    height: 1px;
+    background: var(--ink);
+    margin: 0 auto 28px;
+  }
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+  }
+  .icon-row a {
+    color: var(--ink);
+    display: inline-block;
+    line-height: 0;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+  .icon-row a:hover { opacity: 1; }
+  .icon { width: 28px; height: 28px; }
+
+  a:focus-visible, .link-box:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  footer {
+    margin-top: 56px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <img class="logo" src="assets/logo.jpeg" alt="JC Interiors">
+
+  <section class="links">
+    <h2 class="script">Affiliate links</h2>
+
+    <!--
+      Replace placeholder class with affiliate link
+      <a class="link-box" href="https://a.co/d/XXXXXXX" target="_blank" rel="noopener">
+        Name of Product
+      </a>
+    -->
+    <p class="placeholder">Coming soon</p>
+  </section>
+
+  <section class="contacts">
+    <h2 class="label">Our Contacts</h2>
+    <div class="rule"></div>
+    <div class="icon-row">
+      <a href="https://jcinteriors.studio" target="_blank" rel="noopener" aria-label="Visit our website">
+        <img class="icon" src="assets/icon-globe.svg" alt="">
+      </a>
+      <a href="mailto:jennifer@jcinteriors.studio" aria-label="Email us">
+        <img class="icon" src="assets/icon-email.svg" alt="">
+      </a>
+
+      <!--
+      Phone Number
+        <a href="tel:+1XXXXXXXXXX" aria-label="Call us">
+          <img class="icon" src="assets/icon-phone.svg" alt="">
+        </a>
+      -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 JC Interiors</p>
+  </footer>
+
+</div>
+</body>
+</html>
