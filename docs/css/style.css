@@ -1,0 +1,319 @@
+/* ============================================
+   JC Interiors — shared stylesheet
+   Identity: quiet, editorial, boutique.
+   Cream + ink only. Cormorant Garamond carries
+   body & labels; Petit Formal Script is the one
+   accent voice, used sparingly (hero line + one
+   hand-lettered word per page, echoing the studio's
+   own mood-board labels).
+   ============================================ */
+
+:root {
+  --cream: #f0eee6;
+  --cream-deep: #e7e2d4;
+  --ink: #1a1a1a;
+  --ink-soft: rgba(26, 26, 26, 0.58);
+  --ink-faint: rgba(26, 26, 26, 0.38);
+  --line: rgba(26, 26, 26, 0.16);
+  --max: 460px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--ink); }
+
+/* ---------- Nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  z-index: 50;
+}
+.site-nav__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.site-nav__mark {
+  height: 30px;
+  margin-bottom: 14px;
+}
+.site-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav__links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.site-nav__links a:hover { color: var(--ink); }
+.site-nav__links a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Page shell ---------- */
+main {
+  width: 100%;
+  max-width: var(--max);
+  padding: 48px 24px 0;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.script-line {
+  font-family: 'Petit Formal Script', cursive;
+  font-weight: 400;
+  font-size: 2.3rem;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+.lede {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 auto 8px;
+  max-width: 380px;
+}
+
+.rule {
+  width: 120px;
+  height: 1px;
+  background: var(--ink);
+  margin: 36px auto;
+  opacity: 0.5;
+}
+
+section { margin-bottom: 56px; }
+
+/* ---------- Hero carousel (signature element) ---------- */
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin: 8px 0 0;
+  background: var(--cream-deep);
+}
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 7s linear;
+}
+.carousel__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+.carousel__slide.is-active img { transform: scale(1.14); }
+.carousel__dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  z-index: 2;
+}
+.carousel__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cream);
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+.carousel__dots span.is-active { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__slide, .carousel__slide img { transition: none !important; }
+  .carousel__slide.is-active img { transform: none; }
+}
+
+/* ---------- Affiliate / shop-the-look links ---------- */
+.placeholder {
+  border: 1px dashed var(--ink);
+  border-radius: 2px;
+  padding: 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.link-box {
+  display: block;
+  border: 1px solid var(--ink);
+  padding: 16px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: var(--ink);
+  transition: background 0.15s ease;
+}
+.link-box:hover { background: rgba(0,0,0,0.04); }
+
+/* ---------- Labeled sections (contacts, etc.) ---------- */
+.label {
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+.icon-row a {
+  color: var(--ink);
+  display: inline-block;
+  line-height: 0;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.icon-row a:hover { opacity: 1; }
+.icon { width: 28px; height: 28px; }
+
+/* ---------- Portfolio ---------- */
+.project { margin-bottom: 64px; text-align: left; }
+.project__title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin: 0 0 4px;
+  text-align: center;
+}
+.project__meta {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.project__gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.project__gallery img { width: 100%; }
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.before-after figure { margin: 0; }
+.before-after img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+.before-after figcaption {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+.note-card {
+  border: 1px dashed var(--line);
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+/* ---------- Designer ---------- */
+.portrait-frame {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  overflow: hidden;
+}
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+.portrait-frame span {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 2.6rem;
+}
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  width: 100%;
+  margin-top: 24px;
+}
+.contacts { padding: 48px 24px 0; text-align: center; }
+.contacts .rule { margin-top: 0; }
+.copyright {
+  margin-top: 40px;
+  padding: 20px 24px 40px;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+a:focus-visible, .link-box:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (min-width: 560px) {
+  :root { --max: 560px; }
+  .before-after { gap: 14px; }
+}

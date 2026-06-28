@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JC Interiors</title>
+<title>About — JC Interiors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
   <div class="site-nav__inner">
     <a href="index.html"><img class="site-nav__mark" src="assets/logo.png" alt="JC Interiors"></a>
     <ul class="site-nav__links">
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
       <li><a href="designer.html">Meet the Designer</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="contact.html">Contact Us</a></li>
@@ -25,24 +25,39 @@
 
 <main>
 
-  <section class="hero">
-    <p class="eyebrow">Modern &middot; Curated &middot; Intentional &#10024;</p>
-    <p class="script-line">Virtual Design. Shoppable rooms. Made just for you. <span aria-hidden="true">&#129293;</span></p>
+  <section>
+    <p class="eyebrow">About</p>
+    <p class="script-line">The Studio</p>
 
-    <div class="carousel" data-carousel>
-      <div class="carousel__slide is-active"><img src="assets/portfolio/nursery-02.jpg" alt="A finished nursery with a deep blue board-and-batten accent wall"></div>
-      <div class="carousel__slide"><img src="assets/portfolio/hero-living-room.jpg" alt="A finished living room with a cream sectional and a styled fireplace mantel"></div>
-      <div class="carousel__slide"><img src="assets/portfolio/hero-dining.jpg" alt="A finished dining room with a black chandelier and matching dining set"></div>
-      <div class="carousel__slide"><img src="assets/portfolio/nursery-01.jpg" alt="A nursery corner with a vintage-style crib and layered textiles"></div>
-      <div class="carousel__dots" aria-hidden="true">
-        <span class="is-active"></span><span></span><span></span><span></span>
-      </div>
-    </div>
+    <!--
+      DRAFT COPY — written in the voice of her TikTok bio, meant as a
+      starting point. Replace freely; nothing here is final.
+    -->
+    <p class="lede">
+      JC Interiors is a virtual design studio for people who want their
+      space to feel finished without tearing it apart. We design the room
+      around how you actually live in it, then hand you a shoppable list
+      so every piece is one click from your screen to your living room.
+    </p>
   </section>
 
-  <section class="links">
-    <p class="eyebrow">Under Construction</p>
-    <p class="placeholder">Come back soon</p>
+  <div class="rule"></div>
+
+  <section>
+    <div style="display:grid; grid-template-columns:1fr; gap:28px; text-align:left;">
+      <div>
+        <p class="eyebrow" style="text-align:left;">Modern</p>
+        <p class="lede" style="text-align:left; margin:0;">Clean lines and current pieces — nothing that will feel dated in a year.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="text-align:left;">Curated</p>
+        <p class="lede" style="text-align:left; margin:0;">Every item is chosen on purpose, not pulled from a generic template.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="text-align:left;">Intentional</p>
+        <p class="lede" style="text-align:left; margin:0;">Each room is designed around how you actually use the space.</p>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -61,19 +76,11 @@
       <a href="https://www.tiktok.com/@jcinteriors.studio.us" target="_blank" rel="noopener" aria-label="Follow us on TikTok">
         <img class="icon" src="assets/icon-tiktok.svg" alt="">
       </a>
-
-      <!--
-      Phone Number
-        <a href="tel:+1XXXXXXXXXX" aria-label="Call us">
-          <img class="icon" src="assets/icon-phone.svg" alt="">
-        </a>
-      -->
     </div>
   </section>
 
   <p class="copyright">&copy; 2026 JC Interiors</p>
 </footer>
 
-<script src="js/carousel.js"></script>
 </body>
 </html>
