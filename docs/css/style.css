@@ -103,6 +103,11 @@ main {
   max-width: 380px;
 }
 .process-title {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 auto 8px;
+  max-width: 380px;
   font-weight: bold;
   font-style: italic;
 }
