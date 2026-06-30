@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Pricing — JC Interiors</title>
+  <meta name="description" content="Virtual interior design services starting at $99. The Mini Refresh, The Full Refresh, and Design SOS — shoppable rooms made just for you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Services page — layout extensions only.
+       All color, type, and component tokens come from style.css. */
+
+    /* Wider cap for the two-column pricing grid */
+    .services-wide {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Tier grid ── */
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+      margin: 48px 0 0;
+    }
+
+    .tier {
+      padding: 3rem 2.5rem 3.5rem;
+    }
+
+    .tier:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    .tier-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-name {
+      font-family: 'Petit Formal Script', cursive;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price {
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price sup {
+      font-size: 1.1rem;
+      vertical-align: super;
+    }
+
+    .tier-fit {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 1.6rem;
+      line-height: 1.5;
+    }
+
+    .tier-short-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0.25;
+      margin-bottom: 1.6rem;
+    }
+
+    .tier-desc {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ── What's included band ── */
+    .included-band {
+      width: 100%;
+      background: var(--cream-deep);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin: 48px 0;
+    }
+
+    .included-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3.5rem 24px;
+    }
+
+    .included-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .included-list li {
+      display: grid;
+      grid-template-columns: 1.2rem 1fr;
+      gap: 0.9rem;
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      text-align: left;
+    }
+
+    .included-list li .dash {
+      color: var(--ink-faint);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      user-select: none;
+    }
+
+    /* ── CTA ── */
+    .tiers-cta {
+      text-align: center;
+      padding-bottom: 56px;
+    }
+
+    /* ── Design SOS ── */
+    .sos-section {
+      border-top: 1px solid var(--line);
+      padding: 56px 0 72px;
+    }
+
+    .sos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .sos-price {
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .sos-price sup {
+      font-size: 1rem;
+      vertical-align: super;
+    }
+
+    .sos-desc {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 1.6rem;
+      line-height: 1.65;
+    }
+
+    .sos-short-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0.25;
+      margin-bottom: 1.4rem;
+    }
+
+    .sos-perfect-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.9rem;
+    }
+
+    .sos-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .sos-list li {
+      display: grid;
+      grid-template-columns: 1.2rem 1fr;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .sos-list li .dash {
+      color: var(--ink-faint);
+    }
+
+    .sos-callout {
+      border: 1px solid var(--line);
+      padding: 2.2rem 2rem;
+    }
+
+    .sos-callout p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 1.6rem;
+    }
+
+    /* Filled button variant for SOS CTA */
+    .btn-filled {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-filled:hover { opacity: 0.8; }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .tiers { grid-template-columns: 1fr; }
+      .tier { padding: 2.2rem 0; }
+      .tier:first-child { border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 2.8rem; }
+      .sos-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav__inner">
+    <a href="index.html"><img class="site-nav__mark" src="assets/logo.png" alt="JC Interiors"></a>
+    <ul class="site-nav__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="designer.html">Meet the Designer</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="services.html" aria-current="page">Services & Pricing</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section>
+    <p class="eyebrow">Virtual Interior Design</p>
+    <p class="script-line">Services & Pricing</p>
+    <p class="lede">Everything you need to love your space — without leaving it.</p>
+  </section>
+</main>
+
+<!-- Wider pricing section, outside the narrow main column -->
+<div class="services-wide">
+
+  <!-- Two tiers -->
+  <div class="tiers">
+    <div class="tier">
+      <p class="tier-label">For smaller spaces</p>
+      <p class="tier-name">The Mini Refresh</p>
+      <div class="tier-price"><sup>$</sup>99</div>
+      <p class="tier-fit">Bathrooms, entryways, home offices — spaces that deserve attention too.</p>
+      <div class="tier-short-rule"></div>
+      <p class="tier-desc">A fresh, personalized design direction with options to explore and refine. Everything you need to make a smaller space feel intentional.</p>
+    </div>
+
+    <div class="tier">
+      <p class="tier-label">For larger spaces</p>
+      <p class="tier-name">The Full Refresh</p>
+      <div class="tier-price"><sup>$</sup>160</div>
+      <p class="tier-fit">Living rooms, kitchens, bedrooms — your main stage, fully considered.</p>
+      <div class="tier-short-rule"></div>
+      <p class="tier-desc">A complete vision for larger spaces, with multiple directions to bring your room to life. More room, more possibilities.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- What's included — full bleed band -->
+<div class="included-band">
+  <div class="included-inner">
+    <p class="eyebrow">Both packages include</p>
+    <p class="script-line">What's Included</p>
+    <ul class="included-list">
+      <li>
+        <span class="dash">—</span>
+        <span><strong>2–3 design directions to explore</strong> — because one option is never enough.</span>
+      </li>
+      <li>
+        <span class="dash">—</span>
+        <span><strong>One fully developed room concept</strong>, plus one round of tweaks to get it just right.</span>
+      </li>
+      <li>
+        <span class="dash">—</span>
+        <span><strong>A curated shopping list</strong> built around your budget to help you bring it all to life.</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="services-wide">
+
+  <!-- CTA -->
+  <div class="tiers-cta">
+    <a class="link-box" href="contact.html" style="max-width: 260px; margin: 0 auto;">Start Your Refresh</a>
+  </div>
+
+  <!-- Design SOS -->
+  <div class="sos-section">
+    <p class="eyebrow">Not ready for a full design?</p>
+    <p class="script-line">Design SOS</p>
+    <div class="sos-grid">
+      <div>
+        <div class="sos-price"><sup>$</sup>20</div>
+        <p class="sos-desc">This is for the "what would you do here?" moments — quick, clear direction when you feel stuck.</p>
+        <div class="sos-short-rule"></div>
+        <p class="sos-perfect-label">Perfect for</p>
+        <ul class="sos-list">
+          <li><span class="dash">—</span><span>Curtain choices</span></li>
+          <li><span class="dash">—</span><span>Rug or furniture decisions</span></li>
+          <li><span class="dash">—</span><span>Styling questions</span></li>
+          <li><span class="dash">—</span><span>Finishing touches that feel stuck</span></li>
+        </ul>
+      </div>
+      <div class="sos-callout">
+        <p>Send your question, get clear direction, and move forward with confidence. No package needed — just answers.</p>
+        <a href="contact.html" class="btn-filled">Send a Question</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <section class="contacts">
+    <h2 class="label">Our Contacts</h2>
+    <div class="rule"></div>
+    <div class="icon-row">
+      <a href="https://www.instagram.com/jcinteriors.studio" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+        <img class="icon" src="assets/icon-globe.svg" alt="">
+      </a>
+      <a href="mailto:jennifer@jcinteriors.studio" aria-label="Email us">
+        <img class="icon" src="assets/icon-email.svg" alt="">
+      </a>
+      <a href="https://www.tiktok.com/@jcinteriors.studio.us" target="_blank" rel="noopener" aria-label="Follow us on TikTok">
+        <img class="icon" src="assets/icon-tiktok.svg" alt="">
+      </a>
+    </div>
+  </section>
+  <p class="copyright">&copy; 2026 JC Interiors</p>
+</footer>
+
+</body>
+</html>
